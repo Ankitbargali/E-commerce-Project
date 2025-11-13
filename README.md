@@ -1,144 +1,176 @@
-MERN eCommerce Web Application
+# 🛒 MERN eCommerce Web Application
 
-A full-stack eCommerce web application built using the MERN stack.
-Includes JWT authentication, secure API integration, dynamic product search, category filters, cart & wishlist functionality, checkout page, and a complete admin dashboard for managing products, categories, and orders.
+A full-stack eCommerce web application built using the MERN stack.  
+Includes JWT authentication, secure REST APIs, product search with dynamic categories, cart & wishlist functionality, checkout flow, and an admin dashboard for managing products, categories, and orders.
 
-Features
+---
 
-User Features
+## 🚀 Features
 
-User Registration & Login (JWT Authentication)
-Browse products with:
-Category filters
-Subcategory filters
-Size filters
-Price range filtering
-Product details page
-Add to Cart
-Add to Wishlist
-Checkout Page
-User Address Form (saved for future orders)
-View Order History
+### 👤 User Features
+- User registration & login (JWT authentication)
+- Secure HTTP-only cookies
+- Browse products with:
+  - Category filters
+  - Subcategory filters
+  - Size filters
+  - Price range slider
+- Product detail page
+- Add to Cart
+- Add to Wishlist
+- Checkout page with saved user address
 
-Product Features
+---
 
-Product variants (size, old price, new price, stock)
-Base64 / File upload image handling
-Dynamic categories & subcategories
-Real-time search results
-GSAP-based animations for better UI/UX
+### 🛍 Product Features
+- Product variants (size, price, stock)
+- Base64/file image uploads
+- Dynamic categories & subcategories
+- Real-time search functionality
+- GSAP animations for smooth UI
 
-Admin Features
+---
 
-Admin Dashboard with Sidebar Navigation
-Add New Product
-Update/Delete Product
-Add Categories
-Manage Categories & Subcategories
-Admin-only Protected Routes (JWT + cookies)
+### 🛠 Admin Features
+- Dedicated Admin Dashboard
+- Add new products
+- Add categories & subcategories
+- Edit/delete products
 
+---
 
-Tech Stack
-Frontend
+## 🧰 Tech Stack
 
-React.js
-React Router
-Tailwind CSS
-GSAP Animations
-Context API
-Axios
+### Frontend
+- React.js
+- Tailwind CSS
+- Context API
+- React Router
+- Axios
+- GSAP Animations
 
-Backend
+### Backend
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JSON Web Token (JWT)
+- HTTP-only Cookies
+- REST API Architecture
 
-Node.js
-Express.js
-MongoDB (Mongoose)
-JSON Web Token (JWT)
-HTTP-only Cookies
-REST API Endpoints
+---
 
-Other Tools
+## 📡 API Endpoints
 
-Git & GitHub
+### 🔐 Auth Routes
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/users/createUser` | Register new user |
+| POST | `/api/users/login` | User login |
+| GET  | `/api/users/me` | Get logged-in user |
 
-Folder Structure
-E-commerce-Project/
-│
-├── frontend/       # React UI
-└── backend/        # Node.js + Express server
+---
 
-Authentication
+### 🛒 Product Routes
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET    | `/api/products` | Get all products |
+| GET    | `/api/products/:id` | Get product by ID |
+| POST   | `/api/products/add` | Add new product (Admin) |
+| PUT    | `/api/products/update/:id` | Update product (Admin) |
+| DELETE | `/api/products/delete/:id` | Delete product (Admin) |
 
-Login & Sign-up using JWT
-Access token stored in HTTP-only cookies
-Protected API routes
-Admin-only routes
+---
 
-API Modules
-Users API
+### 📦 Category Routes
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/categories` | Get all categories |
+| POST | `/api/categories/add` | Add category |
+| PUT | `/api/categories/update/:id` | Update category |
+| DELETE | `/api/categories/delete/:id` | Delete category |
 
-Register
-Login
-Get user details
-Update user (address, cart, wishlist)
+---
 
-Products API
-Add product
-Update product
-Delete product
-Get all products
-Get product by ID
+### 🛍 Cart Routes
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/cart/add` | Add to cart |
+| PUT | `/api/cart/update` | Update cart |
+| DELETE | `/api/cart/remove/:id` | Remove item |
 
-Categories API
-Create category
-Update category
-Delete category
-Fetch all categories
+---
 
-Cart API
-Add to cart
-Remove from cart
-Update quantity
+### 📬 Order Routes
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/orders` | Place order |
+| GET | `/api/orders/user` | Get user orders |
+| GET | `/api/orders/all` | Admin: get all orders |
 
-Orders API
-Place order
-Get user orders
+---
 
+## 🔧 Installation & Setup
 
- How to Run Locally
-1️ Clone the repository
+### 📁 1. Clone the repository
+```bash
 git clone https://github.com/Ankitbargali/E-commerce-Project.git
 cd E-commerce-Project
+```
 
-2️ Install frontend dependencies
+###  2. Install & run frontend
+```
 cd frontend
 npm install
 npm run dev
+```
 
-3️ Install backend dependencies
+###  3. Install & run backend
+```
 cd ../backend
 npm install
 npm start
+```
 
-Environment Variables
-Create a .env file in the backend folder:
+---
+
+##  Environment Variables
+
+Create a `.env` file inside the **backend** folder:
+
+```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 COOKIE_SECRET=your_cookie_secret
+```
 
-Future Enhancements
 
-Stripe Payment Gateway
-Fully responsive UI
-Admin Analytics Dashboard
-Pagination & Sorting
-Product Reviews & Ratings
+## 📦 Folder Structure
 
-Contributing
+```
+my-ecommerce-project/
+│
+├── frontend/     # React UI
+├── backend/      # Node + Express API
+└── README.md
+```
 
-Pull requests are welcome!
+---
 
-License
+## 📌 Future Enhancements
+- Stripe payment integration
+- Fully responsive UI
+- Product reviews & ratings
+- Admin analytics dashboard
 
-This project is open-source and free to use.
+---
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome.
+
+---
+
+## 📬 Contact
+**Ankit Bargali**  
+Email: bargali.ankit@gmail.com 
+LinkedIn: https://linkedin.com/in/ankit-bargali-2a1052263
