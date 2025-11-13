@@ -12,32 +12,8 @@ router.get("/categories", async (req, res) => {
   }
 });
 
-// // Add a new category
-// router.post("/categories/add", async (req, res) => {
-//   const { name, subcategories, sizes } = req.body;
+//  Add a new category
 
-//   if (!name) {
-//     return res.status(400).json({ message: "Category name is required" });
-//   }
-
-//   try {
-//     const newCategory = new Category({
-//       name,
-//       subcategories: subcategories || [],
-//       sizes: sizes || [],
-//     });
-
-//     await newCategory.save();
-//     res
-//       .status(201)
-//       .json({ message: "Category added successfully", category: newCategory });
-//   } catch (error) {
-//     res.status(500).json({ message: "Error adding category" });
-//   }
-// });
-// ==========================
-// 📍 Add a new category
-// ==========================
 router.post("/categories/add", async (req, res) => {
   const { name, subcategories, sizes } = req.body;
 
@@ -67,9 +43,8 @@ router.post("/categories/add", async (req, res) => {
   }
 });
 
-// ==========================
-// 📍 Update category by ID
-// ==========================
+//  Update category by ID
+
 router.put("/categories/:id", async (req, res) => {
   const { id } = req.params;
   const { name, subcategories, sizes } = req.body;
@@ -93,9 +68,8 @@ router.put("/categories/:id", async (req, res) => {
   }
 });
 
-// ==========================
-// 📍 Delete category by ID
-// ==========================
+//  Delete category by ID
+
 router.delete("/categories/:id", async (req, res) => {
   const { id } = req.params;
 

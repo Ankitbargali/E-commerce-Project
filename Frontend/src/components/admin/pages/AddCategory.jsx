@@ -40,30 +40,6 @@ const AddCategory = () => {
     setSizes(updatedSizes);
   };
 
-  // Handle form submission
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await axios.post(
-  //       "http://localhost:5000/api/categories/add",
-  //       {
-  //         name,
-  //         subcategories: subcategories.filter((sub) => sub.trim() !== ""), // Remove empty subcategories
-  //         sizes: sizes.filter((size) => size.trim() !== ""), // Remove empty sizes
-  //       },
-  //       { withCredentials: "true" }
-  //     );
-  //     alert(response.data.message);
-  //     setName("");
-  //     setSubcategories([""]); // Reset subcategories
-  //     setSizes([""]); // Reset sizes
-  //     setCategories([...categories, response.data.category]); // Update state
-  //   } catch (error) {
-  //     console.error("Error adding category:", error);
-  //     alert(error.response?.data?.message || "Error adding category");
-  //   }
-  // };
-
   // Handle add or update category
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -38,27 +38,6 @@ app.get("/", (req, res) => {
 
 app.use("/images", express.static("public/images"));
 
-// app.post("/api/products/add", upload.array("images", 5), async (req, res) => {
-//   const { name, description, category, subcategory, price } = req.body;
-//   const imagepaths = req.files.map(
-//     (file) => `http://localhost:5000/images/uploads/${file.filename}`
-//   );
-//   const sizes = JSON.parse(req.body.sizes);
-
-//   let createProduct = await productModel.create({
-//     name: name,
-//     price: price,
-//     description: description,
-//     category: category,
-//     images: imagepaths,
-//     sizes: sizes,
-//     //  stock: 1 ,
-//     subcategory: subcategory,
-//   });
-//   res.send(createProduct);
-//   // console.log("product created ")
-// });
-
 app.post("/api/users/createUser", async (req, res) => {
   const { userName, email, password } = req.body;
 
@@ -123,8 +102,6 @@ app.use("/api", wishlistRoute);
 
 const orderroute = require("./routes/orderRouter");
 app.use("/api", orderroute);
-
-// console.log(userroute);
 
 const port = process.env.port || 5000;
 app.listen(port, () => {

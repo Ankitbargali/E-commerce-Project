@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { DataContext } from "../context/DataProvider";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const NewCollection = () => {
@@ -47,15 +47,11 @@ const NewCollection = () => {
     });
   }
 
-  // const { products, loading } = UseProducts();
-
-  // if (loading) return <p>Loading...</p>;
-
   if (!product) {
     return <div>Loading....</div>;
   }
 
-  // ✅ Get the latest 10 products (assuming product array is oldest → newest)
+  //  Get the latest 10 products (assuming product array is oldest → newest)
   const latestProducts = product.slice(-10).reverse();
 
   return (

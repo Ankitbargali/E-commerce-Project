@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const Wishlist = () => {
   const { wish, fetchUser, user } = useContext(DataContext);
-  // console.log(wish);
 
   const cartSubmit = async (
     productId,

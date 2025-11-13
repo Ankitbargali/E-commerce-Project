@@ -62,7 +62,7 @@ const createOrderFromCart = async (req, res) => {
 
     await newOrder.save();
 
-    // Optional: Clear cart after order placed
+    //  Clear cart after order placed
     user.cart = [];
     await user.save();
 

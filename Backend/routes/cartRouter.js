@@ -6,13 +6,11 @@ const router = express.Router();
 
 router.post("/cart/add", authMiddelware, async (req, res) => {
   const { productId, variant, quantity } = req.body;
-  // console.log(productId);
   try {
     const user = await users.findById(req.user.id);
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
-    // console.log(req.body);
     if (!user.cart) {
       user.cart = [];
     } // Ensure cart is initialized
@@ -40,7 +38,6 @@ router.post("/cart/add", authMiddelware, async (req, res) => {
 router.get("/cart", authMiddelware, async (req, res) => {
   try {
     const userId = req.user.id; //  Extract the user ID properly
-    // console.log(userId);
 
     if (!userId) {
       return res
@@ -52,7 +49,6 @@ router.get("/cart", authMiddelware, async (req, res) => {
       path: "cart.product",
       model: "Product", // Match the model name from `mongoose.model()`
     });
-    // console.log(user.cart);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
@@ -109,9 +105,6 @@ router.patch("/cart/update", authMiddelware, async (req, res) => {
 router.delete("/cart/remove", authMiddelware, async (req, res) => {
   const { productId, size } = req.body; // Receive product ID and size
   const userId = req.user.id;
-  // console.log(size);
-
-  // console.log("Remove from Cart Request:", { productId, size }); // Debugging
 
   if (!productId || !size) {
     return res.status(400).json({ error: "Product ID and size are required" });

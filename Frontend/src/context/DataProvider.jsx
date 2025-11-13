@@ -16,7 +16,6 @@ const DataProvider = ({ children }) => {
     fetchUser();
     fetchUserOrders();
     fetchCategory();
-    // fetchWishlist();
   }, []);
 
   const fetchProducts = async () => {
@@ -34,7 +33,6 @@ const DataProvider = ({ children }) => {
       const res = await axios.get("http://localhost:5000/api/user", {
         withCredentials: true,
       });
-      // console.log("User API Response:", res.data);
 
       setUser(res.data.user); // store full user
       setCart(res.data.user.cart); // extract cart for easy access

@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 const UserOrders = () => {
   const { orders, user } = useContext(DataContext); // Assume orders are in context
-  // console.log(orders);
   const navigate = useNavigate();
 
   if (!user) {

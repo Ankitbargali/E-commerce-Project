@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
 import { NavLink } from "react-router-dom";
 import SearchComponent from "./SearchComponent";
 import { DataContext } from "../context/DataProvider";

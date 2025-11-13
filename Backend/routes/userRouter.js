@@ -3,17 +3,6 @@ const users = require("../Models/users");
 const router = express.Router();
 const authMiddelware = require("../Middelware/authMiddelware");
 
-// // Get all user
-// router.get("/", async (req, res) => {
-//   try {
-//     const user = await users.find();
-//     res.json(user);
-//     // console.log(user);
-//   } catch (error) {
-//     res.status(500).json({ message: error.messages });
-//   }
-// });
-
 router.get("/user", authMiddelware, async (req, res) => {
   try {
     const user = await users

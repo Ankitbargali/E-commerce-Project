@@ -22,12 +22,12 @@ const Search = () => {
     ? product.filter((p) => {
         const productCategory = category?.find((cat) => cat._id === p.category);
 
-        // ✅ Direct category match (when coming from CategoriesList)
+        //  Direct category match (when coming from CategoriesList)
         const directCategoryMatch =
           categoryParam &&
           productCategory?.name?.toLowerCase() === categoryParam;
 
-        // ✅ Search query match (when searching manually)
+        // Search query match (when searching manually)
         const nameMatch = query && p.name?.toLowerCase().includes(query);
         const categoryMatch =
           query && productCategory?.name?.toLowerCase().includes(query);
@@ -37,7 +37,7 @@ const Search = () => {
             sub.toLowerCase().includes(query)
           );
 
-        // ✅ Return true only for valid matches
+        //  Return true only for valid matches
         return (
           directCategoryMatch || nameMatch || categoryMatch || subcategoryMatch
         );
@@ -92,7 +92,7 @@ const Search = () => {
       );
       const max = Math.max(...prices, 0);
 
-      // ✅ Only update if max price changes
+      //  Only update if max price changes
       if (max !== maxPrice) {
         setMaxPrice(max);
         setSelectedMaxPrice(max);
@@ -171,27 +171,6 @@ const Search = () => {
           {/* Filter Section */}
           <div className="w-[20vw] h-fit bg-gray-100 p-4 rounded-md shadow-md">
             <h3 className="text-xl font-medium mb-4">Filters</h3>
-
-            {/* Brand Filter */}
-            {/* <div className="mb-4">
-              <p className="font-semibold mb-2">Brand</p>
-              {categoryBrands.length === 0 ? (
-                <p className="text-sm text-gray-500">No brands found</p>
-              ) : (
-                categoryBrands.map((brand) => (
-                  <label key={brand} className="block">
-                    <input
-                      type="checkbox"
-                      checked={brandFilter.includes(brand)}
-                      onChange={() =>
-                        toggleFilter(brand, setBrandFilter, brandFilter)
-                      }
-                    />{" "}
-                    {brand}
-                  </label>
-                ))
-              )}
-            </div> */}
 
             {/* Subcategory Filter */}
             <div className="mb-4">

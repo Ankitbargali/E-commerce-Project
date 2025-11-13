@@ -100,7 +100,6 @@ const LoginPage = () => {
     //adding value to the desired field
     setErrorMessage("");
   };
-  // console.log(create);
 
   const [errorMessage, setErrorMessage] = useState({
     errFields: "",
@@ -156,7 +155,6 @@ const LoginPage = () => {
     //adding value to the desired field
     setErrorMessage1("");
   };
-  // console.log(loginData);
 
   const [errorMessage1, setErrorMessage1] = useState({
     errLoginFields: "",
@@ -186,7 +184,7 @@ const LoginPage = () => {
           errLogin: result.errlogin,
         });
       }
-      // SUCCESS 🎉
+      // SUCCESS
       fetchUser(); // refresh context user
       navigate("/"); // redirect to home
     } catch (error) {

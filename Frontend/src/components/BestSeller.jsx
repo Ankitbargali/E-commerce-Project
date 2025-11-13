@@ -13,7 +13,7 @@ const BestSeller = () => {
   const slider = useRef();
   const [products, setProducts] = useState([]);
 
-  // ✅ Fetch 10 random products
+  // Fetch 10 random products
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -28,7 +28,7 @@ const BestSeller = () => {
     fetchProducts();
   }, []);
 
-  // ✅ ScrollTrigger animation for heading
+  //  ScrollTrigger animation for heading
   useEffect(() => {
     gsap.to(ref.current, {
       opacity: 1,
@@ -44,7 +44,7 @@ const BestSeller = () => {
     });
   }, []);
 
-  // ✅ Slider controls
+  //  Slider controls
   const next = () => {
     gsap.to(slider.current, {
       left: "-100%",
@@ -72,7 +72,7 @@ const BestSeller = () => {
         </h1>
       </div>
 
-      {/* ✅ Product slider */}
+      {/*  Product slider */}
       <div
         ref={slider}
         className="h-[50vh] w-[200%] flex justify-around items-center relative"
@@ -81,7 +81,7 @@ const BestSeller = () => {
           products.map((product, index) => (
             <Link
               key={product._id}
-              to={`/product/${product._id}`} // ✅ link to product details
+              to={`/product/${product._id}`} //  link to product details
               className={`${
                 index % 2 !== 0 ? "mt-20" : ""
               } h-[35vh] w-[17vw] bg-white relative overflow-hidden group`}
@@ -104,7 +104,7 @@ const BestSeller = () => {
         )}
       </div>
 
-      {/* ✅ Navigation buttons */}
+      {/*  Navigation buttons */}
       <button
         onClick={next}
         className="absolute top-1/2 right-0 bg-gray-900 text-white text-3xl px-2 py-5 opacity-50 font-semibold rounded hover:opacity-100"

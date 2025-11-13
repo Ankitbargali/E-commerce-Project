@@ -20,8 +20,6 @@ const Cart = () => {
     0
   );
 
-  // console.log(cart);
-
   const updateCartQuantity = async (productId, quantity, size) => {
     try {
       const response = await fetch("http://localhost:5000/api/cart/update", {
@@ -43,8 +41,6 @@ const Cart = () => {
   };
 
   const removeFromCart = async (productId, size) => {
-    // console.log("Removing Item:", { productId, size }); // Debugging
-
     try {
       const response = await fetch("http://localhost:5000/api/cart/remove", {
         method: "DELETE",
@@ -64,7 +60,6 @@ const Cart = () => {
       console.error("Error removing from cart:", error);
     }
   };
-  // console.log(cart);
 
   if (!user) {
     navigate("/Login");

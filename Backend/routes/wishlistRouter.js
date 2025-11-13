@@ -7,7 +7,6 @@ const router = express.Router();
 router.post("/wishlist/update", authMiddelware, async (req, res) => {
   try {
     const { productId, variant } = req.body;
-    // console.log(productId);
 
     const user = await users.findById(req.user.id);
 

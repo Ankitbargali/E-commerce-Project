@@ -8,7 +8,6 @@ router.get("/", async (req, res) => {
   try {
     const product = await Product.find();
     res.json({ product });
-    // console.log(product);
   } catch (error) {
     res.status(500).json({ message: error.messages });
   }
@@ -30,8 +29,6 @@ const upload = multer({ storage });
 
 // Add Product Route
 router.post("/add", upload.array("images", 5), async (req, res) => {
-  //   console.log("Request Body:", req.body);
-  //   console.log("Uploaded Files:", req.files);
   try {
     const { name, description, brand, category, subcategory } = req.body;
 

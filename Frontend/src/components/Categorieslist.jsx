@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useNavigate } from "react-router-dom"; // ✅ for navigation
+import { useNavigate } from "react-router-dom"; //  for navigation
 
 import fashion from "../assets/Images/fashion.jpg";
 import phones from "../assets/Images/phones.jpg";
@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Categorieslist = () => {
   const ref = useRef(null);
-  const navigate = useNavigate(); // ✅ initialize navigate
+  const navigate = useNavigate(); //  initialize navigate
 
   useEffect(() => {
     gsap.to(ref.current, {
@@ -29,7 +29,7 @@ const Categorieslist = () => {
     });
   }, []);
 
-  // ✅ categories data to map dynamically
+  //  categories data to map dynamically
   const categories = [
     { name: "Fashion", image: fashion },
     { name: "Phone", image: phones },
@@ -37,7 +37,7 @@ const Categorieslist = () => {
     { name: "Electronics", image: games },
   ];
 
-  // ✅ handle click to navigate with query param
+  //  handle click to navigate with query param
   const handleCategoryClick = (categoryName) => {
     navigate(`/search?category=${encodeURIComponent(categoryName)}`);
   };
@@ -57,7 +57,7 @@ const Categorieslist = () => {
         {categories.map((cat, index) => (
           <div
             key={index}
-            onClick={() => handleCategoryClick(cat.name)} // ✅ click handler
+            onClick={() => handleCategoryClick(cat.name)} //  click handler
             className="h-[35.2vh] w-[17%] bg-white relative overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
           >
             <img
