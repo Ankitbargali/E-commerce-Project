@@ -157,7 +157,7 @@ my-ecommerce-project/
 
 
 
-Live Demo: https://e-comm-frontend-taupe.vercel.app/
+
 ---
 
 ## 📌 Future Enhancements
@@ -177,3 +177,5 @@ Contributions, issues, and feature requests are welcome.
 **Ankit Bargali**  
 Email: bargali.ankit@gmail.com 
 LinkedIn: https://linkedin.com/in/ankit-bargali-2a1052263
+---
+Live Demo: https://e-comm-frontend-taupe.vercel.app/
