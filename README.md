@@ -154,7 +154,9 @@ my-ecommerce-project/
 ├── backend/      # Node + Express API
 └── README.md
 ```
-##Live Demo
+
+
+
 Live Demo: https://e-comm-frontend-taupe.vercel.app/
 ---
 
